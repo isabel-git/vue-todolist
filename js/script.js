@@ -5,8 +5,17 @@
 var app = new Vue({
   el: "#app",
   data: {
-    
+    newTodoText: '',
+    todos: ['Do the dishes', 'Take out the trash', 'Mow the lawn']
+  },
+  methods: { // aggiungere todo
+    add: function () {
+      this.todos.push(this.newTodoText);
+
+    }, // rimuovere todo
+    remove: function (index) {
+      this.todos.splice(index, 1);
+    }
   }
 
 })
-

@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://use.fontawesome.com/f9888a3f24.css">
-        <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-            crossorigin="anonymous" />
-      <link rel="stylesheet" href="css/main.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <title>list</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/f9888a3f24.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>list</title>
+</head>
+
+<body>
 
 
-      <div id="app" class="container">
+    <div id="app" class="container">
 
         <!-- inizio header -->
         <header>
 
-            <div class="logo">immagine</div>
-          
-            <div>
-                <input type="text">
-                <button>Aggiungi</button>
-            </div>
+            <div class="logo"><img src="img/index.png" alt=""></div>
+
+            <form>
+                <input v-model="newTodoText" placeholder="Nuovo Todo">
+                <button @click="add">Aggiungi</button>
+            </form>
 
         </header>
         <!-- fine header -->
 
         <!-- inizio main -->
         <main>
-            <ul>
-                <li>
-                   <span>input</span>
-                   <a href=""><i class="fa fa-times" aria-hidden="true"></i></a>
-                </li>
-                
-            </ul>
 
+            <ul>
+                <li v-for="(item, index) in todos">
+                    <p>{{ item }}</p>
+                    <i class="fa fa-times" aria-hidden="true" @click="remove"></i>
+                </li>
+            </ul>
+     
         </main>
         <!-- fine main -->
 
-      </div>
+    </div>
 
 
     <script src="js/script.js"></script>
-    </body>
+</body>
+
 </html>
