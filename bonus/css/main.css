@@ -1,0 +1,47 @@
+/* regole generali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 70%;
+    height: 100vh;
+}
+/* regole header */
+header{
+    text-align: center;
+    margin: 30px 0;
+}
+header img{
+    width: 30%;
+    margin-bottom: 10px;
+}
+/* regole main */
+main {
+    width: 100%;
+    /* regole di debug */
+    background-color: rgb(218, 218, 218);
+    /* fine debug */
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid rgb(92, 92, 92);
+}
+/* remove */
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
