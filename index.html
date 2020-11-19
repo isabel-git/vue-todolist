@@ -23,10 +23,12 @@
 
             <div class="logo"><img src="img/index.png" alt=""></div>
 
-            <form>
+
+            <div>
                 <input v-model="newTodoText" placeholder="Nuovo Todo">
                 <button @click="add">Aggiungi</button>
-            </form>
+            </div>
+
 
         </header>
         <!-- fine header -->
@@ -35,12 +37,14 @@
         <main>
 
             <ul>
+
                 <li v-for="(item, index) in todos">
                     <p>{{ item }}</p>
-                    <i class="fa fa-times" aria-hidden="true" @click="remove"></i>
+                    <i class="fa fa-times" aria-hidden="true" @click="remove(index)"></i>
                 </li>
+
             </ul>
-     
+
         </main>
         <!-- fine main -->
 

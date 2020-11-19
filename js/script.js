@@ -11,10 +11,9 @@ var app = new Vue({
   methods: { // aggiungere todo
     add: function () {
       this.todos.push(this.newTodoText);
-
     }, // rimuovere todo
     remove: function (index) {
-      this.todos.splice(index, 1);
+    this.todos.splice(index, 1);
     }
   }
 
