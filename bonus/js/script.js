@@ -1,22 +1,30 @@
-// un input permette all’utente di scrivere una “cosa da fare”;
-// un bottone permette di aggiungere quella cosa alla lista di cose da fare in pagina, come promemoria;
-// una volta che l’utente ha ipoteticamente svolto l’attività, grazie ad un bottone (X) può eliminare quella determinata cosa dalla lista.
+// dò la possibilità anche di inserire la nuova “cosa da fare”, scritta nell’input anche con la pressione del tasto ‘enter’ da tastiera;
+// l’utente non può inserire più volte la stessa “cosa da fare”;
+// etc. etc… quello che vi intriga di più da provare.
 
 var app = new Vue({
   el: "#app",
   data: {
     newTodoText: '',
-    todos: ['Do the dishes', 'Take out the trash', 'Mow the lawn']
+    todos: ['Do the dishes', 'Take out the trash', 'Mow the lawn'],
+    empty: false
   },
-  methods: { // aggiungere todo
+  methods: {
     add: function () {
-      this.todos.push(this.newTodoText);
-      
+      if (!this.newTodoText) { // controllo 
+        this.empty = true;
+        return;
+      }
+
+      this.empty = false;
+
+      this.todos.push(this.newTodoText); // aggiungere todo
+
       this.newTodoText = '';
 
-    }, // rimuovere todo
-    remove: function (index) {
-    this.todos.splice(index, 1);
+    },
+    remove: function (index) { 
+    this.todos.splice(index, 1); // rimuovere todo
     }
 
   }

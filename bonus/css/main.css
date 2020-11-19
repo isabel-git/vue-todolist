@@ -24,6 +24,10 @@ header img{
     width: 30%;
     margin-bottom: 10px;
 }
+header .input{
+    border-radius: 5px;
+    padding: 10px;
+}
 /* regole main */
 main {
     width: 100%;
@@ -44,4 +48,10 @@ li{
 }
 .show{
     display: block;
+}
+/* empty error */
+.error{
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 10px;
 }
