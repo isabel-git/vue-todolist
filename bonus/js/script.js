@@ -22,8 +22,6 @@ var app = new Vue({
       this.todos.push(this.newTodoText); // aggiungere todo
       this.newTodoText = '';
 
-
-
     },
     remove: function (index) {
       this.todos.splice(index, 1); // rimuovere todo
