@@ -7,24 +7,26 @@ var app = new Vue({
   data: {
     newTodoText: '',
     todos: ['Do the dishes', 'Take out the trash', 'Mow the lawn'],
-    empty: false
+    hasError: false,
   },
   methods: {
     add: function () {
-      if (!this.newTodoText) { // controllo 
-        this.empty = true;
+      if (!this.newTodoText  || this.todos.includes(this.newTodoText)) { // controllo 
+        this.hasError = true;
         return;
       }
 
-      this.empty = false;
+      this.hasError = false;
+
 
       this.todos.push(this.newTodoText); // aggiungere todo
-
       this.newTodoText = '';
 
+
+
     },
-    remove: function (index) { 
-    this.todos.splice(index, 1); // rimuovere todo
+    remove: function (index) {
+      this.todos.splice(index, 1); // rimuovere todo
     }
 
   }

@@ -25,7 +25,7 @@
 
 
             <div>
-                <input v-on:kedown.13="add" :class="{error: empty}" v-model="newTodoText" placeholder="Nuovo Todo" class="input">
+                <input v-on:kedown.13="add" :class="{error: hasError}" v-model="newTodoText" placeholder="Nuovo Todo" class="input">
                 <button @click="add">Aggiungi</button>
             </div>
 
