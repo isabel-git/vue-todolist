@@ -11,8 +11,8 @@ var app = new Vue({
   },
   methods: {
     add: function () {
-      if (!this.newTodoText  || this.todos.includes(this.newTodoText)) { // controllo 
-        this.hasError = true;
+      if (!this.newTodoText  || this.todos.includes(this.newTodoText)) { // se non trova newTodoText o se nel todos e' gia incluso  
+        this.hasError = true; // aggiungi hasError
         return;
       }
 
@@ -20,7 +20,7 @@ var app = new Vue({
 
 
       this.todos.push(this.newTodoText); // aggiungere todo
-      this.newTodoText = '';
+      this.newTodoText = ''; // azzero l'imput per evitare che mi stampi la stessa cosa piu' volte
 
     },
     remove: function (index) {
